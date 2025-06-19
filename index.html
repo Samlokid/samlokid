@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="crt">
+    <div class="crt" id="site-wrapper">
         <header>
             <h1>Santiago Morínigo</h1>
             <p>Filmmaker & Creative Technologist</p>
+            <button id="toggleMode">Toggle Mode</button>
         </header>
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
+            <a href="Santiago_CV.pdf" download>Download CV</a>
         </nav>
         <main>
             <section id="about">
@@ -31,6 +34,14 @@
                     <li><strong>Bootcamp Filmaton Lab 2024</strong> – Participant</li>
                 </ul>
             </section>
+            <section id="gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery">
+                    <img src="https://via.placeholder.com/200x150?text=Project+1" alt="Project 1" />
+                    <img src="https://via.placeholder.com/200x150?text=Project+2" alt="Project 2" />
+                    <img src="https://via.placeholder.com/200x150?text=Project+3" alt="Project 3" />
+                </div>
+            </section>
             <section id="contact">
                 <h2>Contact</h2>
                 <p>Email: <a href="mailto:riossantiago40@gmail.com">riossantiago40@gmail.com</a></p>
@@ -42,5 +53,6 @@
             <p>© 2025 Santiago Morínigo</p>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
