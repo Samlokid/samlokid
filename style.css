@@ -1,0 +1,44 @@
+
+body {
+    background: #e0e0ff url('https://www.transparenttextures.com/patterns/grid-me.png');
+    color: #000;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+}
+.crt {
+    padding: 2rem;
+    border: 4px double #000;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fffdf5;
+    box-shadow: 0 0 12px #ff00ff;
+}
+header, nav, main, footer {
+    margin-bottom: 2rem;
+}
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px #00f;
+}
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    background: #ccf;
+    padding: 0.3rem 0.6rem;
+    border: 2px solid #000;
+    box-shadow: 2px 2px #999;
+}
+nav a:hover {
+    background: #99f;
+}
+ul {
+    list-style-type: square;
+}
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
