@@ -1,8 +1,31 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('toggleMode');
-    toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
+  // Toggle dark/light
+  document.getElementById('toggleMode').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+
+  // Text Sphere
+  const canvas = document.getElementById("sphere-canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = canvas.height = 200;
+
+  const words = "Santiago Morínigo ".repeat(3).trim().split(" ");
+  const radius = 80;
+  const angleStep = (Math.PI * 2) / words.length;
+  let angle = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    words.forEach((word, i) => {
+      const a = angle + angleStep * i;
+      const x = canvas.width / 2 + radius * Math.cos(a);
+      const y = canvas.height / 2 + radius * Math.sin(a);
+      ctx.fillStyle = "#0ff";
+      ctx.font = "14px Courier New";
+      ctx.fillText(word, x - ctx.measureText(word).width / 2, y);
     });
-    console.log("Welcome to Santiago's Y2K Portfolio with CRT vibes!");
+    angle += 0.01;
+    requestAnimationFrame(draw);
+  }
+  draw();
 });
