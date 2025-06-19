@@ -1,74 +1,89 @@
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', monospace;
-    transition: background 0.5s, color 0.5s;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+body.dark {
+  background-color: #111;
+  color: #eee;
 }
 .crt {
-    padding: 2rem;
-    border: 4px double #000;
-    max-width: 900px;
-    margin: 2rem auto;
-    background-color: #fffdf5;
-    box-shadow: 0 0 12px #ff00ff;
-}
-.dark .crt {
-    background-color: #111;
-    color: #eee;
-    box-shadow: 0 0 12px #0ff;
+  padding: 2rem;
+  border: 4px double #ccc;
+  max-width: 900px;
+  margin: 4rem auto;
+  background-color: #222;
+  box-shadow: 0 0 12px #0ff;
 }
 header, nav, main, footer {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 h1 {
-    font-size: 2.5rem;
-    text-shadow: 1px 1px #00f;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 1px 1px #0ff;
 }
 nav a {
-    margin-right: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
-    background: #ccf;
-    padding: 0.3rem 0.6rem;
-    border: 2px solid #000;
-    box-shadow: 2px 2px #999;
-}
-.dark nav a {
-    background: #333;
-    color: #eee;
-    border-color: #aaa;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #eee;
+  background: #333;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid #aaa;
+  box-shadow: 2px 2px #000;
 }
 nav a:hover {
-    background: #99f;
-}
-.dark nav a:hover {
-    background: #666;
+  background: #666;
 }
 ul {
-    list-style-type: square;
+  list-style-type: square;
 }
 footer {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #666;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
 }
 .gallery {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .gallery img {
-    border: 3px solid #000;
-    max-width: 100%;
-}
-.dark .gallery img {
-    border-color: #ccc;
+  border: 3px solid #ccc;
+  max-width: 100%;
 }
 #toggleMode {
-    float: right;
-    padding: 0.3rem 0.6rem;
-    font-weight: bold;
-    cursor: pointer;
+  float: right;
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.scrolling-bg {
+  position: fixed;
+  top: 0;
+  width: 200%;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0ff;
+  background: #000;
+  z-index: 999;
+  padding: 0.5rem;
+  animation: scroll 20s linear infinite;
+}
+@keyframes scroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+#sphere-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+canvas#sphere-canvas {
+  width: 200px;
+  height: 200px;
 }
