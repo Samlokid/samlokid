@@ -3,6 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('toggleMode').addEventListener('click', () => {
     document.body.classList.toggle('dark');
   });
+document.getElementById("langToggle").addEventListener("click", () => {
+  const isEnglish = document.documentElement.lang === "en";
+  const newLang = isEnglish ? "es" : "en";
+  document.documentElement.lang = newLang;
+  document.getElementById("langToggle").textContent = isEnglish ? "English" : "Español";
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.textContent = el.getAttribute(`data-${newLang}`);
+  });
+});
 
   // Text Sphere
   const canvas = document.getElementById("sphere-canvas");
