@@ -13,6 +13,16 @@ document.getElementById("langToggle").addEventListener("click", () => {
     el.textContent = el.getAttribute(`data-${newLang}`);
   });
 });
+document.getElementById("langToggle").addEventListener("click", () => {
+  const currentLang = document.documentElement.lang;
+  const newLang = currentLang === "en" ? "es" : "en";
+  document.documentElement.lang = newLang;
+  document.getElementById("langToggle").textContent = newLang === "en" ? "Español" : "English";
+
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.textContent = el.getAttribute(`data-${newLang}`);
+  });
+});
 
   // Text Sphere
   const canvas = document.getElementById("sphere-canvas");
